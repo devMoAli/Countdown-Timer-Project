@@ -1,0 +1,88 @@
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-family: "Arial", sans-serif;
+  color: #fff;
+}
+
+.time-segment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(45deg, #00c6ff, #ae0edf);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.time {
+  font-size: 3rem;
+  margin-bottom: 5px;
+  color: #fff;
+  text-shadow: 0 0 10px #686868, 0 0 10px #accad2, 0 0 20px #00c6ff,
+    0 0 30px #00c6ff, 0 0 40px #00c6ff, 0 0 50px #00c6ff, 0 0 60px #00c6ff;
+  animation: bounce 10s infinite;
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ddd;
+}
+
+/* Neon Border Effect */
+.time-segment::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 3px solid #9dc6f0;
+  border-radius: 10px;
+  box-shadow: 0 0 3px #ccdde2, 0 0 5px #01c7fe, 0 0 10px #bbcbd0,
+    0 0 20px #cfd2d2;
+  z-index: -1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes neonBorder {
+  0% {
+    box-shadow: 0 0 10px #ffffff, 0 0 20px #d0e1e6, 0 0 30px #93c2d0,
+      0 0 40px #61bad2;
+  }
+
+  100% {
+    box-shadow: 0 0 10px #b2d2da, 0 0 20px #81c1d3, 0 0 30px #c6d6db,
+      0 0 40px #ffffff;
+  }
+}
